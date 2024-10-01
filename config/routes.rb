@@ -12,4 +12,14 @@ Rails.application.routes.draw do
   delete "/todos/:id" => "todos#destroy"
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get "/categories" => "category#index"
+
+  get "/category/:id" => "category#show"
+
+  post "/category" => "category#create"
+
+  patch "/category/:id" => "category#update"
+
+  delete "category/:id" => "category#destroy"
 end

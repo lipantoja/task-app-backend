@@ -7,7 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
 def new_category
-  category = Category.new(name: "task")
+  @category = Category.new(name: "task")
+  @category.save
 end
+

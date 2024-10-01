@@ -24,9 +24,20 @@ class TodosController < ApplicationController
   end
 
   def update
-    #placeholder
+    @todo = Todo.find_by(id: params[:id])
+    @todo.update(
+      user_id: params[:user_id],
+      category_id: params[:category_id],
+      title: params[:title],
+      description: params[:description],
+      deadline: params[:deadline],
+      completed: params[:completed]
+    )
+    render :show
   end
   def destroy
-    #placeholder
+    @todo = Todo.find_by(id: params[:id])
+    @todo.destroy
+    render json: { message: "Todo was destroyed successfully"}
   end
 end

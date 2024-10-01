@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "/todos/:id" => "todos#show"
   post"/todos" => "todos#create"
   patch "/todos/:id" => "todos#update"
-  patch "/todos/:id" => "todos#destroy"
+  delete "/todos/:id" => "todos#destroy"
   # Defines the root path route ("/")
   # root "posts#index"
 end

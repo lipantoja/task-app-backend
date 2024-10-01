@@ -22,4 +22,17 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     render :show
   end
+
+  def update
+    @user = User.find_by(id: params[:id])
+
+    if @user.update(
+      name: params[:name] || @user.name,
+      email: params[:width] || @user.email,
+    )
+      render json: @user, status: :ok # Return the updated user as JSON
+    else
+      render json: { errors: @user.errors.full_messages }, status: :bad_request
+    end
+  end
 end

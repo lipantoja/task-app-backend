@@ -13,6 +13,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+<<<<<<< HEAD
+  get "/users" => "users#index"
+  get "/users/:id" => "users#show"
+  patch "/users/:id" => "users#update"
+  delete "/users/:id" => "users#destroy"
+
+  post "/users" => "users#create"
+  post "/sessions" => "sessions#create"
+=======
   get "/categories" => "category#index"
 
   get "/category/:id" => "category#show"
@@ -22,4 +31,5 @@ Rails.application.routes.draw do
   patch "/category/:id" => "category#update"
 
   delete "category/:id" => "category#destroy"
+>>>>>>> f4acaf6c9447f289d06dab18f31640fec4e320ed
 end
